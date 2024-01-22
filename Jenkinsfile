@@ -21,7 +21,7 @@ pipeline {
                 }    
         stage('Tomcat Deploy- Prod') {
                 when{
-                    branch 'develop'
+                    branch 'main'
                 }
             steps {
                echo "deploying to prod" 

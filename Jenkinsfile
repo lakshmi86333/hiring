@@ -3,28 +3,27 @@ pipeline {
 
     stages {
         stage('Maven package') {
-            steps {
                 when{
                     branch 'develop'
                 }
+            steps {
                 sh 'mvn clean package'
                 }    
             }
             
         stage('Tomcat Deploy- dev') {
-            steps {
                 when{
                     branch 'develop'
                 }
+            steps {
                 echo " deploying to dev"
                 } 
                 }    
-            } 
         stage('Tomcat Deploy- Prod') {
-            steps {
                 when{
                     branch 'develop'
                 }
+            steps {
                echo "deploying to prod" 
                 }    
             }
